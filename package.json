@@ -8,10 +8,8 @@
     "test": "npm run run-tests",
     "tdd": "npm run run-tdd",
     "coverage": "nyc npm run run-tests",
-    "run-tests":
-      "cross-env LOG_LEVEL=OFF mocha --require ./spec/.config/bootstrap.js --colors --require babel-core/register ./spec/**/*.test.js",
-    "run-tdd":
-      "mocha --require ./spec/.config/bootstrap.js --watch --colors --require babel-core/register ./spec/**/*.test.js"
+    "run-tests": "cross-env LOG_LEVEL=OFF mocha --require ./spec/.config/bootstrap.js --colors --require babel-core/register ./spec/**/*.test.js",
+    "run-tdd": "mocha --require ./spec/.config/bootstrap.js --watch --colors --require babel-core/register ./spec/**/*.test.js"
   },
   "author": "Venzee, Inc.",
   "private": true,
@@ -52,7 +50,13 @@
     "node": ">=6.10.3"
   },
   "lint-staged": {
-    "*.{json,md}": ["prettier --write", "git add"],
-    "*.js": ["eslint --fix", "git add"]
+    "*.{json,md}": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
   }
 }
